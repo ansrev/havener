@@ -22,7 +22,7 @@ FROM golang:1.11-alpine AS build
 RUN apk add --update make git
 COPY . /go/src/github.com/homeport/havener
 RUN cd /go/src/github.com/homeport/havener && \
-  make binaries/havener-linux-amd64 && \
+  make test build && \
   cp -p binaries/havener-linux-amd64 /usr/local/bin/havener
 
 
